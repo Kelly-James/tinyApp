@@ -19,16 +19,15 @@ function generateRandomString() {
     sixString += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return sixString;
-}
+};
 
-function prefixCheck() {
-  var longURL = req.params.id
-  var splitURL = longURL.split(['.']);
-  if(splitURL[0] !== 'http://') {
-    splitURL[0] = 'http://www';
-    url = splitURL.join([sep = '.']);
+function prefixCheck(url) {
+  if(url.match(/^http:/)) {
+    return url;
+  } else {
+    return 'http://' + url;
   }
-}
+};
 
 app.get('/', (req, res) => {
   res.render('index.ejs');
@@ -57,7 +56,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.post('/list', (req, res) => {
-  urlDatabase[generateRandomString()] = req.body.longURL;
+  urlDatabase[generateRandomString()] = prefixCheck(req.body.longURL);
   res.redirect('/list');
 });
 
