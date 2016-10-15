@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body>
+  <div>
+    <% for(var urlKey in urls) { %>
+      <p><a href="<%= urls[urlKey] %>"><%= urlKey %></a></p>
+      <form method="POST" action= <%= "/list/" + urlKey + "/delete" %> >
+        <button type="submit">Delete URL</button>
+      </form>
+        <form method="GET" action="/update">
+          <button type="submit">Update URL</button>
+        </form>
+      <hr>
+    <% } %>
+    <form method="GET" action="/create">
+      <button type="submit">Shorten Another URL</button>
+    </form>
+  </div>
+</body>
+
+</html>
