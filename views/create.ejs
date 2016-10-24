@@ -3,19 +3,16 @@
 <html lang="en">
 
 <head>
-  <% include partials/head %>
+  <% include partials/_header %>
   <title>Create</title>
 </head>
 
-<header>
-  DOOOOOM MAGNET
-</header>
-
 <body>
-  <form method="POST" action="/list" style="margin:150px;">
+<h1>DOOOOOM MAGNET</h1>
+  <form method="POST" action="/list" style="margin: 150px;">
     <label for="longURL">Enter a URL:</label>
-    <input type="text" id="longURL" name="longURL" placeholder=":)" style="width: 300px">
-    <input type="submit" value="Submit">
+    <input type="text" id="longURL" name="longURL" placeholder=":)" style="width: 200px">
+    <input type="submit" value="Make Shorter!">
   </form>
 </body>
 

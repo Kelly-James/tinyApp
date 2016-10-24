@@ -1,19 +1,12 @@
-<!DOCTYPE html>
 
-<html lang="en">
+<meta charset="UTF-8">
 
-<style>
-body {background-color: green;}
-h1   {
-      color: white;
-      font-size: 666%;
-    }
-button {
-      color: #900;
-      font-size: 200%;
-      font-weight: bold;
-    }
-</style>
-<body>
-  <h1> DOOM MAGNET </h1>
-</body>
+<link rel="stylesheet" href="/public/style.css" type="text/css" />
+
+<header>
+  <div class="brand">tinyApp</div>
+  <input class="reg" type="button" value="Log Out" onclick="location.href='/'"/>
+  <div>
+    <h1> <%= email %> </h1>
+  </div>
+</header>
